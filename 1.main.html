@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap-icons.css">
+    <link rel="stylesheet" href="./vendor/toastui/toastui-chart.min.css" />
+    <link rel="stylesheet" href="./css/kt.css">
+    <title>KT ADID</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand text-light" href="./1.main.html">ADID Platform</a>
+            <div class="navbar-collapse justify-content-center" id="">
+                <ul class="navbar-nav">
+                    <li class="nav-item active mx-1 mx-lg-4">
+                        <a class="nav-link" href="./1.main.html">대시보드</a>
+                    </li>
+                    <li class="nav-item mx-1 mx-lg-4">
+                        <a class="nav-link" href="./2.portal.html">STB홈포털</a>
+                    </li>
+                    <li class="nav-item mx-1 mx-lg-4">
+                        <a class="nav-link" href="./3.platform.html">통합광고플랫폼</a>
+                    </li>
+                    <li class="nav-item mx-1 mx-lg-4">
+                        <a class="nav-link" href="./4.ad.html">엠브레인-AD</a>
+                    </li>
+                    <li class="nav-item mx-1 mx-lg-4">
+                        <a class="nav-link" href="./5.homeportal.html">연동 통계</a>
+                      </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-primary" href="#" target="_blank">LAMP</a>
+                    </li> -->
+                </ul>
+
+            </div>
+            <div>
+                <!-- <button class="btn text-light my-2 my-sm-0" type="submit" disabled>Admin</button> -->
+                <button class="btn text-light ml-2 my-2 my-sm-0" type="submit">logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="flex-shrink-0 mt-5">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between mt-5">
+                <!-- <h3 class="m-0">연동 현황</h3> -->
+                <div>2021.10.20 12:00</div>
+            </div>
+            <div class="row g-3 mt-4">
+                <div class="col-3">
+                    <div class="statis">
+                        <div class="statis-date">Today</div>
+                        <div class="statis-body">
+                            <div class="statis-tit">전체누적</div>
+                            <div class="statis-txt">488<span>만</span></div>
+                            <div class="statis-desc">4,884,251</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="statis">
+                        <div class="statis-date">Weekly</div>
+                        <div class="statis-body">
+                            <div class="statis-tit">신규(D3)</div>
+                            <div class="statis-txt">560,000</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="statis">
+                        <div class="statis-date">Weekly</div>
+                        <div class="statis-body">
+                            <div class="statis-tit">갱신</div>
+                            <div class="statis-txt">200,000</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="statis">
+                        <div class="statis-date">Weekly</div>
+                        <div class="statis-body">
+                            <div class="statis-tit">재발급</div>
+                            <div class="statis-txt">300,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-3 mt-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h6 class="m-0">STB 홈포털 API 연동</h6>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-sm btn-outline-secondary">
+                                    <input type="radio" name="chart_range1" id="chart_range1_option1"
+                                        data-chart="chart1" data-range="day" checked>Day
+                                </label>
+                                <label class="btn btn-sm btn-outline-secondary">
+                                    <input type="radio" name="chart_range1" id="chart_range1_option2"
+                                        data-chart="chart1" data-range="month">Month
+                                </label>
+                            </div>                            
+                        </div>
+                        <div class="card-body pb-0">
+                            <div id="chart-area1" style="width:100%;height:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row" style="margin:30px 0;">
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h6 class="m-0">통합광고플랫폼</h6>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-sm btn-outline-secondary">
+                                    <input type="radio" name="chart_range3" id="chart_range3_option1"
+                                        data-chart="chart3" data-range="day" checked>10Day
+                                </label>
+                                <label class="btn btn-sm btn-outline-secondary">
+                                    <input type="radio" name="chart_range3" id="chart_range3_option2"
+                                        data-chart="chart3" data-range="year">Year
+                                </label>
+                            </div>                            
+                        </div>
+                        <div class="card-body pb-0">
+                            <div id="chart-area3" style="width:100%;height:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h6 class="m-0">엠브레인-AD</h6>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-sm btn-outline-secondary">
+                                    <input type="radio" name="chart_range2" id="chart_range2_option1"
+                                        data-chart="chart2" data-range="day" checked>10Day
+                                </label>
+                                <label class="btn btn-sm btn-outline-secondary">
+                                    <input type="radio" name="chart_range2" id="chart_range2_option2"
+                                        data-chart="chart2" data-range="year">Year
+                                </label>
+                            </div>                            
+                        </div>
+                        <div class="card-body pb-0">
+                            <div id="chart-area2" style="width:100%;height:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+    <footer class="footer mt-auto bg-light py-3">
+        <div class="container text-center">
+            <span class="text-muted">KT ADID Management Platform</span>
+        </div>
+    </footer>
+
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="./vendor/jquery/jquery.slim.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/toastui/toastui-chart.min.js"></script>
+    <script>
+        (function () {
+            var el1 = document.getElementById('chart-area1');
+            var data1_day = {
+                categories: ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13',
+                    '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'
+                ],
+                series: [{
+                    name: 'STB 홈포털 API 연동',
+                    data: [400, 300, 800, 700, 850, 750, 900, 400, 300, 800, 700, 850, 750, 900, 400,
+                        300, 800, 700, 850, 750, 900, 400, 300, 800, 700
+                    ],
+                }],
+            };
+            var data1_month = {
+                categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15',
+                    '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29',
+                    '30', '31'
+                ],
+                series: [{
+                    name: 'STB 홈포털 API 연동',
+                    data: [450, 500, 350, 800, 700, 850, 750, 900, 450, 500, 350, 800, 700, 450, 500,
+                        350, 800, 700, 850, 750, 900, 450, 500, 350, 800, 700, 450, 500, 350, 800,
+                        700
+                    ],
+                }],
+            };
+            var options1 = {
+                chart: {
+                    width: 'auto',
+                    height: 300
+                },
+                xAxis: {
+                    title: 'hour',
+                },
+                yAxis: {
+                    title: 'Amount',
+                },
+                legend: {
+                    align: 'bottom',
+                    showCheckbox: false,
+                },
+                exportMenu: {
+                    visible: false
+                },
+                theme: {
+                    series: {
+                        lineWidth: 1,
+                        colors: [
+                            '#36a6bf',
+                        ]
+                    },
+                    tooltip: {
+                        background: 'white',
+                        borderColor: 'rgba(0,0,0,0.125)',
+                        borderWidth: 1,
+                        borderRadius: 0,
+                        borderStyle: 'solid',
+                        header:{
+                            color:'black'
+                        },
+                        body:{
+                            color:'black'
+                        }
+                    }
+                },
+            };
+            var options1_day = {
+                xAxis: {
+                    title: 'hour'
+                }
+            };
+            var options1_month = {
+                xAxis: {
+                    title: 'day'
+                }
+            };
+            var chart1 = toastui.Chart.lineChart({
+                el: el1,
+                data: data1_day,
+                options: options1
+            });
+
+            var el2 = document.getElementById('chart-area2');
+            var data2_day = {
+                categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                series: [{
+                    name: 'M-Brain AD SFTP 연동',
+                    data: [400, 300, 800, 700, 850, 750, 900, 400, 300, 800],
+                }],
+            };
+            var data2_year = {
+                categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                series: [{
+                    name: 'M-Brain AD SFTP 연동',
+                    data: [450, 500, 350, 800, 700, 850, 750, 900, 450, 500, 350, 800],
+                }],
+            };
+            var options2 = {
+                chart: {
+                    width: 'auto',
+                    height: 300
+                },
+                xAxis: {
+                    title: 'day',
+                },
+                yAxis: {
+                    title: 'Amount',
+                },
+                legend: {
+                    align: 'bottom',
+                    showCheckbox: false,
+                },
+                exportMenu: {
+                    visible: false
+                },
+                theme: {
+                    series: {
+                        lineWidth: 1,
+                        colors: [
+                            '#36a6bf',
+                        ]
+                    },
+                    tooltip: {
+                        background: 'white',
+                        borderColor: 'rgba(0,0,0,0.125)',
+                        borderWidth: 1,
+                        borderRadius: 0,
+                        borderStyle: 'solid',
+                        header:{
+                            color:'black'
+                        },
+                        body:{
+                            color:'black'
+                        }
+                    }
+                },
+            };
+            var options2_day = {
+                xAxis: {
+                    title: 'day'
+                }
+            };
+            var options2_year = {
+                xAxis: {
+                    title: 'month'
+                }
+            };
+            var chart2 = toastui.Chart.lineChart({
+                el: el2,
+                data: data2_day,
+                options: options2
+            });
+
+            var el3 = document.getElementById('chart-area3');
+            var data3_day = {
+                categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                series: [{
+                    name: '통합광고플랫폼 SFTP 연동',
+                    data: [400, 300, 800, 700, 850, 750, 900, 400, 300, 800],
+                }],
+            };
+            var data3_year = {
+                categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                series: [{
+                    name: '통합광고플랫폼 SFTP 연동',
+                    data: [450, 500, 350, 800, 700, 850, 750, 900, 450, 500, 350, 800],
+                }],
+            };
+            var options3 = {
+                chart: {
+                    width: 'auto',
+                    height: 300
+                },
+                xAxis: {
+                    title: 'day',
+                },
+                yAxis: {
+                    title: 'Amount',
+                },
+                legend: {
+                    align: 'bottom',
+                    showCheckbox: false,
+                },
+                exportMenu: {
+                    visible: false
+                },
+                theme: {
+                    series: {
+                        lineWidth: 1,
+                        colors: [
+                            '#36a6bf',
+                        ]
+                    },
+                    tooltip: {
+                        background: 'white',
+                        borderColor: 'rgba(0,0,0,0.125)',
+                        borderWidth: 1,
+                        borderRadius: 0,
+                        borderStyle: 'solid',
+                        header:{
+                            color:'black'
+                        },
+                        body:{
+                            color:'black'
+                        }
+                    }
+                },
+            };
+            var options3_day = {
+                xAxis: {
+                    title: 'day'
+                }
+            };
+            var options3_year = {
+                xAxis: {
+                    title: 'month'
+                }
+            };
+            var chart3 = toastui.Chart.lineChart({
+                el: el3,
+                data: data3_day,
+                options: options3
+            });
+
+            var charts = [chart1, chart2, chart3];
+            var radios = document.querySelectorAll('input[type="radio"]');
+            var radios_arr = Array.prototype.slice.call(radios, 0);
+            radios_arr.forEach(function (radio) {
+                radio.addEventListener('input', function (e) {
+                    var chart_name = parseInt(e.target.getAttribute('data-chart').substring(5),
+                        10) - 1;
+                    var chart_range = e.target.getAttribute('data-range');
+                    var data_name = "data" + (1 + chart_name) + "_" + chart_range;
+                    var data_name_var = eval(data_name);
+                    charts[chart_name].setData(data_name_var);
+                    var option_name = "options" + (1 + chart_name) + "_" + chart_range;
+                    var option_name_var = eval(option_name);
+                    charts[chart_name].updateOptions(option_name_var);
+                })
+            });
+        })();
+    </script>
+</body>
+
+</html>
